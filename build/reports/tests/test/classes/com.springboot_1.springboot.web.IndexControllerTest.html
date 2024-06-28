@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.475s</div>
+<div class="counter">0.376s</div>
 <p>duration</p>
 </div>
 </td>
@@ -78,14 +78,44 @@
 <span class="code">
 <pre>java.lang.AssertionError: 
 Expecting actual:
-  &quot;&lt;!DOCTYPE HTML&gt;
+  &quot; &lt;!DOCTYPE HTML&gt;
 &lt;html&gt;
 &lt;head&gt;
-    &lt;title&gt;??? ?? ????&lt;/title&gt;
+    &lt;title&gt;????? ????&lt;/title&gt;
     &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
+
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css&quot;&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;h1&gt;??? ??? ???? ? ???&lt;/h1&gt;
+
+        &lt;h1&gt;??? ??? ???? ? ???&lt;/h1&gt;
+        &lt;div class=&quot;col-md-12&quot;&gt;
+            &lt;div class=&quot;row&quot;&gt;
+                &lt;div class=&quot;col-md-6&quot;&gt;
+                    &lt;a href=&quot;/posts/save&quot; role=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;? ??&lt;/a&gt;
+                        &lt;a href=&quot;/oauth2/authorization/google&quot; class=&quot;btn btn-success active&quot; role=&quot;button&quot;&gt;Google Login&lt;/a&gt;
+                        &lt;a href=&quot;/oauth2/authorization/naver&quot; class=&quot;btn btn-secondary active&quot; role=&quot;button&quot;&gt;Naver Login&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;br&gt;
+            &lt;table class=&quot;table table-horizontal table-bordered&quot;&gt;
+                &lt;thead class=&quot;thead-strong&quot;&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;?????&lt;/th&gt;
+                    &lt;th&gt;??&lt;/th&gt;
+                    &lt;th&gt;???&lt;/th&gt;
+                    &lt;th&gt;?????&lt;/th&gt;
+                &lt;/tr&gt;
+                &lt;/thead&gt;
+                &lt;tbody id=&quot;tbody&quot;&gt;
+                &lt;/tbody&gt;
+            &lt;/table&gt;
+        &lt;/div&gt;
+ &lt;script src=&quot;https://code.jquery.com/jquery-3.3.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;!--index.js ??--&gt;
+&lt;script src=&quot;/static/js/app/index.js&quot;&gt;&lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;&quot;
 to contain:
@@ -191,7 +221,7 @@ to contain:
 </thead>
 <tr>
 <td class="failures">메인페이지_로딩()</td>
-<td class="failures">0.475s</td>
+<td class="failures">0.376s</td>
 <td class="failures">failed</td>
 </tr>
 </table>
@@ -199,15 +229,8 @@ to contain:
 <div id="tab2" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>02:16:45.161 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Neither @ContextConfiguration nor @ContextHierarchy found for test class [IndexControllerTest]: using SpringBootContextLoader
-02:16:45.165 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader -- Could not detect default resource locations for test class [com.springboot_1.springboot.web.IndexControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-02:16:45.166 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.springboot_1.springboot.web.IndexControllerTest]: IndexControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-02:16:45.188 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Using ContextCustomizers for test class [IndexControllerTest]: [DisableObservabilityContextCustomizer, PropertyMappingContextCustomizer, Customizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, TestRestTemplateContextCustomizer]
-02:16:45.297 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider -- Identified candidate component class: file [C:\spring boot\springboot_1\build\classes\java\main\com\springboot_1\springboot\Application.class]
-02:16:45.299 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.springboot_1.springboot.Application for test class com.springboot_1.springboot.web.IndexControllerTest
-02:16:45.400 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Using TestExecutionListeners for test class [IndexControllerTest]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, EventPublishingTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener, ResetMocksTestExecutionListener]
-02:16:45.402 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener -- Before test class: class [IndexControllerTest], class annotated with @DirtiesContext [false] with mode [null]
-02:16:45.416 [Test worker] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener -- Performing dependency injection for test class com.springboot_1.springboot.web.IndexControllerTest
+<pre>2024-06-28T23:03:59.559+09:00  INFO 14580 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.springboot_1.springboot.web.IndexControllerTest]: IndexControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-06-28T23:03:59.573+09:00  INFO 14580 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.springboot_1.springboot.Application for test class com.springboot_1.springboot.web.IndexControllerTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -217,33 +240,37 @@ to contain:
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.0.5)
 
-2024-06-26T02:16:45.751+09:00  INFO 26016 --- [    Test worker] c.s.springboot.web.IndexControllerTest   : Starting IndexControllerTest using Java 17.0.11 with PID 26016 (started by kwlee in C:\spring boot\springboot_1)
-2024-06-26T02:16:45.754+09:00  INFO 26016 --- [    Test worker] c.s.springboot.web.IndexControllerTest   : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2024-06-26T02:16:46.550+09:00  INFO 26016 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-06-26T02:16:46.623+09:00  INFO 26016 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 61 ms. Found 1 JPA repository interfaces.
-2024-06-26T02:16:47.278+09:00  INFO 26016 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
-2024-06-26T02:16:47.293+09:00  INFO 26016 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-06-26T02:16:47.294+09:00  INFO 26016 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
-2024-06-26T02:16:47.404+09:00  INFO 26016 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-06-26T02:16:47.406+09:00  INFO 26016 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1614 ms
-2024-06-26T02:16:47.444+09:00  INFO 26016 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-06-26T02:16:47.689+09:00  INFO 26016 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
-2024-06-26T02:16:47.691+09:00  INFO 26016 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-06-26T02:16:47.706+09:00  INFO 26016 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
-2024-06-26T02:16:47.908+09:00  INFO 26016 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-06-26T02:16:47.975+09:00  INFO 26016 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
-2024-06-26T02:16:48.353+09:00  INFO 26016 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2024-06-28T23:03:59.612+09:00  INFO 14580 --- [    Test worker] c.s.springboot.web.IndexControllerTest   : Starting IndexControllerTest using Java 17.0.11 with PID 14580 (started by kwlee in C:\spring boot\springboot_1)
+2024-06-28T23:03:59.612+09:00  INFO 14580 --- [    Test worker] c.s.springboot.web.IndexControllerTest   : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-06-28T23:03:59.932+09:00  INFO 14580 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-28T23:04:00.002+09:00  INFO 14580 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53 ms. Found 2 JPA repository interfaces.
+2024-06-28T23:04:00.429+09:00  INFO 14580 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2024-06-28T23:04:00.443+09:00  INFO 14580 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-28T23:04:00.443+09:00  INFO 14580 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2024-06-28T23:04:00.541+09:00  INFO 14580 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-28T23:04:00.541+09:00  INFO 14580 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 927 ms
+2024-06-28T23:04:00.568+09:00  INFO 14580 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-28T23:04:00.761+09:00  INFO 14580 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:64c3c12a-01da-4438-9e52-41cf8aa19b32 user=SA
+2024-06-28T23:04:00.763+09:00  INFO 14580 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-28T23:04:00.772+09:00  INFO 14580 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:64c3c12a-01da-4438-9e52-41cf8aa19b32'
+2024-06-28T23:04:00.989+09:00  INFO 14580 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-28T23:04:01.071+09:00  INFO 14580 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2024-06-28T23:04:01.285+09:00  INFO 14580 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
 Hibernate: drop table if exists posts cascade 
+Hibernate: drop table if exists users cascade 
 Hibernate: create table posts (id bigint generated by default as identity, created_date timestamp(6), modified_date timestamp(6), author varchar(255), content TEXT not null, title varchar(500) not null, primary key (id))
-2024-06-26T02:16:49.366+09:00  INFO 26016 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2024-06-26T02:16:49.376+09:00  INFO 26016 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-06-26T02:16:49.713+09:00  WARN 26016 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-06-26T02:16:49.946+09:00  INFO 26016 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2024-06-26T02:16:50.195+09:00  INFO 26016 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 54559 (http) with context path ''
-2024-06-26T02:16:50.206+09:00  INFO 26016 --- [    Test worker] c.s.springboot.web.IndexControllerTest   : Started IndexControllerTest in 4.766 seconds (process running for 6.047)
-2024-06-26T02:16:50.552+09:00  INFO 26016 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-06-26T02:16:50.553+09:00  INFO 26016 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-06-26T02:16:50.556+09:00  INFO 26016 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+Hibernate: create table users (id bigint generated by default as identity, created_date timestamp(6), modified_date timestamp(6), email varchar(255) not null, name varchar(255) not null, picture varchar(255), role varchar(255) not null, primary key (id))
+2024-06-28T23:04:01.785+09:00  INFO 14580 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-06-28T23:04:01.795+09:00  INFO 14580 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-28T23:04:02.494+09:00  WARN 14580 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-28T23:04:02.508+09:00  INFO 14580 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-06-28T23:04:02.568+09:00  INFO 14580 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@561e8bab, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3b8b1ba9, org.springframework.security.web.context.SecurityContextHolderFilter@663d59ed, org.springframework.security.web.header.HeaderWriterFilter@63fcbf75, org.springframework.security.web.authentication.logout.LogoutFilter@2cc3df02, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@7859bd9a, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@4ad0465c, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@60580e42, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@e8bd42f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@64d49e35, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@665902eb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@46219104, org.springframework.security.web.access.ExceptionTranslationFilter@2835574b, org.springframework.security.web.access.intercept.AuthorizationFilter@22a9fa23]
+2024-06-28T23:04:02.675+09:00  INFO 14580 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 58548 (http) with context path ''
+2024-06-28T23:04:02.682+09:00  INFO 14580 --- [    Test worker] c.s.springboot.web.IndexControllerTest   : Started IndexControllerTest in 3.1 seconds (process running for 6.729)
+2024-06-28T23:04:02.804+09:00  INFO 14580 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-28T23:04:02.804+09:00  INFO 14580 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-28T23:04:02.805+09:00  INFO 14580 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+Hibernate: select p1_0.id,p1_0.author,p1_0.content,p1_0.created_date,p1_0.modified_date,p1_0.title from posts p1_0 order by p1_0.id desc
 </pre>
 </span>
 </div>
@@ -255,7 +282,7 @@ Hibernate: create table posts (id bigint generated by default as identity, creat
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.0</a> at 2024. 6. 26. 오전 2:16:51</p>
+<a href="http://www.gradle.org">Gradle 8.0</a> at 2024. 6. 28. 오후 11:04:04</p>
 </div>
 </div>
 </body>
