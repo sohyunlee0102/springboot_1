@@ -1,14 +1,14 @@
+name: deploy
+
 env:  
   S3_BUCKET_NAME: springbootbuild
   PROJECT_NAME: springboot_1
-  CODE_DEPLOY_APP_NAME: springboot                   #(15)
+  CODE_DEPLOY_APP_NAME: springboot
   CODE_DEPLOY_GROUP_NAME: springboot-group
-
-name: deploy
 
 on:
   release:
-    types: [created]  # 'created'로 변경
+    types: [created]
   push:
     branches: [master]
   workflow_dispatch:
@@ -45,29 +45,32 @@ jobs:
       run: ./gradlew build -x test
       shell: bash
 
+    - name: Verify build output
+      run: ls -la build/libs
+      shell: bash
+
     - name: Get current time
-      uses: 1466587594/get-current-time@v2  # (9)
+      uses: 1466587594/get-current-time@v2
       id: current-time
       with:
         format: YYYY-MM-DDTHH-mm-ss 
         utcOffset: "+09:00"
 
-    - name: Show Current Time
-      run: echo "CurrentTime=${{steps.current-time.outputs.formattedTime}}" # (10)
-      shell: bash
     - name: Make zip file
-      run: zip -r ./$PROJECT_NAME.zip .         # (12)
+      run: |
+        mkdir -p deploy
+        zip -r ./deploy/${PROJECT_NAME}.zip build/libs/*
       shell: bash
 
     - name: Configure AWS credentials
-      uses: aws-actions/configure-aws-credentials@v1      #(13)
+      uses: aws-actions/configure-aws-credentials@v1
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ap-northeast-2
 
     - name: Upload to S3
-      run: aws s3 cp --region ap-northeast-2 ./deploy/$PROJECT_NAME.zip s3://$S3_BUCKET_NAME/$PROJECT_NAME/$PROJECT_NAME.zip    #(14)
+      run: aws s3 cp --region ap-northeast-2 ./deploy/${PROJECT_NAME}.zip s3://${S3_BUCKET_NAME}/${PROJECT_NAME}/${PROJECT_NAME}.zip
 
     - name: Code Deploy
-      run: aws deploy create-deployment --application-name $CODE_DEPLOY_APP_NAME --deployment-config-name CodeDeployDefault.AllAtOnce --deployment-group-name $CODE_DEPLOY_GROUP_NAME --s3-location bucket=$S3_BUCKET_NAME,bundleType=zip,key=$PROJECT_NAME/$PROJECT_NAME.zip    #(16)
+      run: aws deploy create-deployment --application-name $CODE_DEPLOY_APP_NAME --deployment-config-name CodeDeployDefault.AllAtOnce --deployment-group-name $CODE_DEPLOY_GROUP_NAME --s3-location bucket=$S3_BUCKET_NAME,bundleType=zip,key=$PROJECT_NAME/$PROJECT_NAME.zip
